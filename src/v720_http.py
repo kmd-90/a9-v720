@@ -255,7 +255,7 @@ class v720_http(log, SimpleHTTPRequestHandler):
                     "isBind": "8",
                     "domain": "v720.naxclow.com",
                     "updateUrl": None,
-                    "host": netcl_udp.get_ip(list(gws['default'].values())[0][0] if len(gws['default']) > 0 else '10.42.0.1', 80),
+                    "host": netcl_udp.get_ip(list(gws['default'].values())[0][0] if len(gws['default']) > 0 else '10.42.0.1', 8085),
                     "currTime": f'{int(datetime.timestamp(datetime.now()))}',
                     "pwd": "deadbeef",
                     "version": None
@@ -293,3 +293,4 @@ if __name__ == '__main__':
             f'--- Can\'t open {HTTP_PORT} port due to system root permissions or maybe you have already running HTTP server?')
         print(
             f'--- if not try to use "sudo sysctl -w net.ipv4.ip_unprivileged_port_start=80"')
+
